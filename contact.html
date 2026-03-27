@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT — EMMA THRASHER</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">THRASHER</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Bio</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" style="min-height: 50vh;">
+    <h1 class="hero-name">Hit Me Up</h1>
+    <p class="hero-sub">Drop a line &middot; Let's connect</p>
+  </section>
+
+  <div class="checker-strip"></div>
+  <div class="divider"></div>
+
+  <div class="contact-wrap">
+    <h2 class="section-title" style="margin-bottom: 2rem;">Send It</h2>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="who are you?" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@whatever.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="what's on your mind?" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">SEND IT</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+  </div>
+
+  <div class="divider"></div>
+  <div class="checker-strip"></div>
+
+  <footer>
+    &copy; 2026 Emma Thrasher &mdash; Keep Shredding
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.style.display = 'block';
+      status.textContent = 'MESSAGE SENT. STAY RAD.';
+      e.target.reset();
+      setTimeout(() => { status.style.display = 'none'; }, 4000);
+    }
+  </script>
+
+</body>
+</html>
